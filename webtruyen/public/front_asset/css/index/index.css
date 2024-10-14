@@ -1,0 +1,41 @@
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas: 
+    "h1 h2 h2 h3"
+    "h4 h2 h2 h5";
+    margin: 36px 0;
+}
+.banner__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner__left__top {
+    grid-area: h1;
+    background-color: aqua;
+}
+.banner__left__bottom {
+    grid-area: h4;
+    background-color: bisque;
+}
+.banner__right__top {
+    grid-area: h3;
+    background-color: burlywood;
+}
+.banner__right__bottom {
+    grid-area: h5;
+    background-color: aquamarine;
+}
+.banner__center {
+    grid-area: h2;
+    background-color: red;
+}
+
+
+@media screen and (max-width: 64em){
+   
+}
