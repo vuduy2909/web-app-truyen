@@ -139,6 +139,14 @@ class UserController extends Controller
 
         return redirect()->route("admin.$this->table.index")
             ->with('success', 'Đã đưa vào sổ đen');
+
+
+
+
+
+
+
+            
     }
 
     public function create()
