@@ -90,6 +90,53 @@ class UserController extends Controller
         ]);
     }
 
+
+
+    public function create()
+    {
+        //        genders
+        $gendersEnum = UserGenderEnum::getValues();
+        $genders = [];
+        foreach ($gendersEnum as $gender) {
+            $genders[$gender] = UserGenderEnum::getNameByValue($gender);
+        }
+
+        //       level
+        $levels = Level::query()->get([
+            'id',
+            'name',
+        ]);
+
+        $this->title = 'Thêm Người dùng';
+        View::share('title', $this->title);
+        return view("admin.$this->table.create", [
+            'genders' => $genders,
+            'levels' => $levels,
+        ]);
+    }
+
+    public function store(StoreRequest $request)
+    {
+        $data = $request->validated();
+        $avatar = $request->file('avatar');
+        $data['avatar'] = null;
+        $data['password'] = Hash::make($data['password']);
+        $newUser = $this->model->create($data);
+
+        if (isset($avatar)) {
+            $fileAvatarExtension = $request->file('avatar')->extension();
+            $fileAvatarName = "avatar.$fileAvatarExtension";
+            $fileAvatarUrl = Storage::disk('public')->putFileAs("avatars/$newUser->id", $request->file('avatar'), $fileAvatarName);
+
+            $newUser->update([
+                'avatar' => $fileAvatarUrl,
+            ]);
+        }
+
+        return redirect()->route("admin.$this->table.index")
+            ->with('success', 'Đã thêm thành công');
+    }
+
     
  
 
