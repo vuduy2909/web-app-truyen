@@ -15,8 +15,12 @@ class HistoryController extends Controller
         $story_id = $request->get('story_id');
         if (Auth::check()) {
             History::query()
+
                 ->where('user_id', Auth::id())
+                
                 ->where('story_id', $story_id)
+
+
                 ->delete();
 
             return response()->json(['success' => 'thành công']);

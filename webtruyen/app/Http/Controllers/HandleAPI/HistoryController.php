@@ -25,6 +25,7 @@ class HistoryController extends Controller
                     'image' => $history['story']['image_url'],
                     'slug' => $history['story']['slug'],
                     'chapter_number' => $history['chapter_number'],
+                
                 ];
             }
 

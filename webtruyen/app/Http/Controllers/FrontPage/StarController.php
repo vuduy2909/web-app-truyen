@@ -27,8 +27,12 @@ class StarController extends Controller
         try {
             Star::query()->create([
                 'user_id' => $user_id,
+
                 'story_id' => $story,
+                
                 'total' => $request->get('star'),
+
+
             ]);
         } catch (Throwable $e) {
             dd($e);
