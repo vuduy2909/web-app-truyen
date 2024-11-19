@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  android:id="@+id/linear_container"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".activities.ProfileActivity">
+
+  <EditText
+    android:id="@+id/search_inp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Nhập tên truyện cần tìm"
+    android:inputType="text"
+    tools:ignore="LabelFor"
+    android:autofillHints="" />
+
+  <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:scrollbars="none" />
+  </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+  <FrameLayout
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  </FrameLayout>
+
+</LinearLayout>

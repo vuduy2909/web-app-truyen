@@ -1,0 +1,13 @@
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/bottom_dialog"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!--Thêm các thành phần cần hiển thị trong dialog-->
+  <Button
+    android:id="@+id/change_avatar_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Đổi ảnh đại diện"/>
+</RelativeLayout>
