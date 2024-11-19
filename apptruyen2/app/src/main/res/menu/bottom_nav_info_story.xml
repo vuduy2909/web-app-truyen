@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+  android:id="@+id/download_btn"
+  android:icon="@drawable/baseline_download_24"
+  android:title="TẢI VỀ" />
+    <item
+      android:id="@+id/rank_btn"
+      android:icon="@drawable/baseline_star_outline_24"
+      android:title="ĐÁNH GIÁ" />
+
+    <item
+      android:id="@+id/read"
+      android:icon="@drawable/baseline_menu_book_24"
+      android:title="ĐỌC TRUYỆN" />
+
+    <item
+      android:id="@+id/comment_btn"
+      android:icon="@drawable/baseline_comment_24"
+      android:title="BÌNH LUẬN" />
+</menu>
