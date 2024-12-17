@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+    android:id="@+id/logout_btn"
+    android:icon="@drawable/baseline_logout_24"
+    android:title="Đăng xuất"
+    app:showAsAction="always" />
+
+  <item
+    android:id="@+id/edit_btn"
+    android:title="Sửa thông tin" />
+
+  <item
+    android:id="@+id/password_btn"
+    android:title="Đổi mật khẩu" />
+</menu>
