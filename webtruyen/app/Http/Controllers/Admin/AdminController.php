@@ -32,10 +32,14 @@ class AdminController extends Controller
         return view('admin.index', [
             'allUsers' => $allUsers,
             'userCount' => $userCount,
-
+            'censorCount' => $censorCount,
+            'adminCount' => $adminCount,
+            'blackListCount' => $blackListCount,
 
             'userPercentage' => $userPercentage,
-
+            'censorPercentage' => $censorPercentage,
+            'adminPercentage' => $adminPercentage,
+            'blackListPercentage' => $blackListPercentage,
 
             'maxViewStory' => $maxViewStory,
             'minViewStory' => $minViewStory,

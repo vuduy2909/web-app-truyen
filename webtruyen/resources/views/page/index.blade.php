@@ -4,10 +4,12 @@
         <link rel="stylesheet" href="{{ asset('front_asset/css/own/index.css') }}">
         <link rel="stylesheet" href="{{ asset('front_asset/css/own/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('front_asset/css/own/owl.theme.default.min.css') }}">
+
+
     @endpush
     <!-- slide -->
     <div class="">
-        <h3 class="mt-4 mb-0" style="color: #2980b9;">Truyện đề cử</h3>
+        <h3 class="mt-4 mb-0" style="color: #2980b9;">Truyện đề cử </h3>
     </div>
     <div class="owl-carousel owl-theme mt-2">
         @foreach ($storiesPin as $story)

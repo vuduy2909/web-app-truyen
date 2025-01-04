@@ -271,3 +271,10 @@ a:hover {
 .dark .rank_top_info_name {
     color: var(--color-dark);
 }
+
+.owl-carousel .item img {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+    height: 300px; /* Đặt chiều cao cố định */
+    object-fit: cover; /* Giúp ảnh phù hợp với khung mà không bị méo */
+    border-radius: 5px; /* Tùy chọn: bo tròn góc ảnh */
+}

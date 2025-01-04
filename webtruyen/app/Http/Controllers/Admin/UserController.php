@@ -133,13 +133,6 @@ class UserController extends Controller
             'genderFilter' => $genderFilter,
         ]);
     }
-    public function destroy($id)
-    {
-        $this->model->find($id)->delete();
-
-        return redirect()->route("admin.$this->table.index")
-            ->with('success', 'Đã đưa vào sổ đen');
-    }
 
     public function create()
     {
@@ -186,14 +179,42 @@ class UserController extends Controller
             ->with('success', 'Đã thêm thành công');
     }
 
-    
- 
+    public function destroy($id)
+    {
+        $this->model->find($id)->delete();
 
+        return redirect()->route("admin.$this->table.index")
+            ->with('success', 'Đã đưa vào sổ đen');
+    }
 
+    public function restore($id)
+    {
+        if ($user = User::onlyTrashed()->find($id)) {
+            $user->restore();
 
- 
+            return redirect()->route("admin.$this->table.black_list")
+                ->with('success', 'Đã khôi phục thành công');
+        }
+        return redirect()->route("admin.$this->table.black_list")
+            ->with('success', 'Không có người này');
+    }
 
+    public function kill($id)
+    {
+        if ($user = User::onlyTrashed()->find($id)) {
+            if (File::isFile("storage/$user->avatar")) {
+                $link = "storage/$user->avatar";
+                $path = "storage/avatars/$user->id";
+                unlink($link);
+                rmdir($path);
+            }
+            $user->forceDelete();
 
+            return redirect()->route("admin.$this->table.black_list")
+                ->with('success', 'Đã xóa vĩnh viễn người này');
+        }
 
-
+        return redirect()->route("admin.$this->table.black_list")
+            ->with('success', "Không thành công");
+    }
 }

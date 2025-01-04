@@ -1,0 +1,15 @@
+
+.codegpt
+# Ignore environment files
+.env
+
+# Ignore IDE configuration
+.idea/
+
+# Ignore specific configuration files
+*.txt
+
+.DS_Store
+*.log
+node_modules/
+vendor/

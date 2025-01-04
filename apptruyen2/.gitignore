@@ -13,3 +13,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Ignore environment files
+.env
+
+# Ignore IDE configuration
+.idea/
+
+# Ignore specific configuration files
+*.txt
